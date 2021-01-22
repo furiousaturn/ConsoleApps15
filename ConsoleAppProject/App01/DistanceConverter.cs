@@ -1,4 +1,6 @@
-﻿namespace ConsoleAppProject.App01
+﻿using System;
+
+namespace ConsoleAppProject.App01
 {
     /// <summary>
     /// Converts Miles to Feet
@@ -16,7 +18,9 @@
         /// </summary>
         public void Run()
         {
-
+            InputMiles();
+            CalculateFeet();
+            OutputFeet();
         }
         
         /// <summary>
@@ -25,6 +29,9 @@
         /// </summary>
         private void InputMiles()
         {
+            Console.Write("Please enter the number of miles >");
+            string value = Console.ReadLine();
+            miles = Convert.ToDouble(value);
 
         }
 
