@@ -15,7 +15,7 @@ namespace ConsoleAppProject.App01
         private double feet;
 
         /// <summary>
-        /// 
+        /// Main Run method
         /// </summary>
         public void Run()
         {
@@ -23,6 +23,9 @@ namespace ConsoleAppProject.App01
             InputMiles();
             CalculateFeet();
             OutputFeet();
+            InputFeet();
+            CalculateMiles();
+            OutputMiles();
         }
         
         /// <summary>
@@ -37,26 +40,57 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// 
+        /// Features Stage 2
+        /// </summary>
+        private void InputFeet()
+        {
+            Console.Write("Please enter the number of feet > ");
+            string value = Console.ReadLine();
+            feet = Convert.ToDouble(value);
+        }
+     
+        /// <summary>
+        /// Features Stage 1
         /// </summary>
         private void CalculateFeet() 
         {
             feet = miles * 5280;
         }
 
+        /// <summary>
+        /// Features Stage 2
+        /// </summary>
+        private void CalculateMiles()
+        {
+            miles = feet / 5280;
+        }
+
+        /// <summary>
+        /// Features Stage 1
+        /// </summary>
         private void OutputFeet()
         {
             Console.WriteLine(miles + " miles is " + feet + " feet");
         }
 
         /// <summary>
-        /// 
+        /// Features Stage 2
+        /// </summary>
+        private void OutputMiles()
+        {
+            Console.WriteLine(feet + " feet is " +  miles+ " miles");
+        }
+
+
+        /// <summary>
+        /// Features Stage 1
         /// </summary>
         private void OutputHeading()
         {
             Console.WriteLine();
             Console.WriteLine("\n-------------------------");
             Console.WriteLine("  Convert Miles to Feet  ");
+            Console.WriteLine("  Convert Feet to Miles  ");
             Console.WriteLine("  By Andrew Stephenson   ");
             Console.WriteLine("-------------------------\n");
         }
