@@ -11,21 +11,35 @@ namespace ConsoleAppProject.App01
     public class DistanceConverter
     {
         public const int FEET_IN_MILES = 5280;
+        public const double METRES_IN_MILES = 1609.34;
         private double miles;
         private double feet;
+        private double metres;
 
         /// <summary>
-        /// Main Run method
+        /// Main Run method 
+        /// Performing each feature in sequence
+        /// Will require refactoring at the next stage.
         /// </summary>
         public void Run()
         {
+            //Heading to describe basic functionality of program
             OutputHeading();
+            
+            //Convert Miles to Feet
             InputMiles();
             CalculateFeet();
             OutputFeet();
+            
+            //Convert Feet to Miles
             InputFeet();
             CalculateMiles();
             OutputMiles();
+
+            //Convert Miles to Metres
+            InputMiles();
+            CalculateMetres();
+            OutputMetres();
         }
         
         /// <summary>
@@ -54,7 +68,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void CalculateFeet() 
         {
-            feet = miles * 5280;
+            feet = miles * FEET_IN_MILES;
         }
 
         /// <summary>
@@ -62,7 +76,15 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void CalculateMiles()
         {
-            miles = feet / 5280;
+            miles = feet / FEET_IN_MILES;
+        }
+
+        /// <summary>
+        /// Features Stage 2
+        /// </summary>
+        private void CalculateMetres()
+        {
+            metres = miles * METRES_IN_MILES;
         }
 
         /// <summary>
@@ -78,9 +100,16 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputMiles()
         {
-            Console.WriteLine(feet + " feet is " +  miles+ " miles");
+            Console.WriteLine(feet + " feet is " +  miles + " miles");
         }
 
+        /// <summary>
+        /// Features Stage 2
+        /// </summary>
+        private void OutputMetres()
+        {
+            Console.WriteLine(miles + " miles is " + metres + " metres");
+        }
 
         /// <summary>
         /// Features Stage 1
@@ -89,8 +118,11 @@ namespace ConsoleAppProject.App01
         {
             Console.WriteLine();
             Console.WriteLine("\n-------------------------");
+            Console.WriteLine("    DISTANCE CONVERTER");
+            Console.WriteLine("\n-------------------------");
             Console.WriteLine("  Convert Miles to Feet  ");
             Console.WriteLine("  Convert Feet to Miles  ");
+            Console.WriteLine("  Convert Miles to Metres  ");
             Console.WriteLine("  By Andrew Stephenson   ");
             Console.WriteLine("-------------------------\n");
         }
