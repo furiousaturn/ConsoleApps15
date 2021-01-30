@@ -47,12 +47,88 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            OutputHeading($"Converting {fromUnit} to {toUnit}");
-            fromDistance = InputDistance($"Please enter the number of {fromUnit} > ");
-            //CalculateFeet();
+            OutputHeading();
+
+            fromUnit = SelectUnit(" Please select the from distance unit > ");
+            toUnit = SelectUnit(" Please select the to Distance unit > ");
+
+            Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
+           
+            fromDistance = InputDistance($" Please enter the number of {fromUnit} > ");
+
+            CalculateDistance();
+
             OutputDistance();
         }
 
+        private void CalculateDistance()
+        {
+            if (fromUnit == MILES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
+            }
+            else if (fromUnit ==FEET && toUnit == MILES)
+            {
+                toDistance = fromDistance / FEET_IN_MILES;
+            }
+            else if (fromUnit == MILES && toUnit == METRES)
+            {
+                toDistance = fromDistance * METRES_IN_MILES;
+            }
+            else if (fromUnit == METRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / METRES_IN_MILES;
+            }
+            else if (fromUnit == FEET && toUnit == METRES)
+            {
+                toDistance = fromDistance * FEET_IN_METRES;
+            }
+            else if (fromUnit == METRES && toUnit == FEET)
+            {
+                toDistance = fromDistance / FEET_IN_METRES;
+            }
+        }
+
+        private string SelectUnit(string prompt)
+        {
+            string choice = DisplayChoices(prompt);
+            string unit = ExecuteChoice(choice);
+            
+            Console.WriteLine($"\n You have chosen {unit}");
+            return unit;
+        }
+
+        private static string DisplayChoices(string prompt)
+        {
+            Console.WriteLine();
+            Console.WriteLine($" 1. {FEET}");
+            Console.WriteLine($" 2. {METRES}");
+            Console.WriteLine($" 3. {MILES}");
+            Console.WriteLine();
+
+            Console.Write(prompt);
+            string choice = Console.ReadLine();
+            return choice;
+        }
+            
+        private static string ExecuteChoice(string choice)
+        {
+            if (choice == "1")
+            {
+                return FEET;
+            }
+            else if (choice == "2")
+            {
+                return METRES;
+            }
+            else if (choice == "3")
+            {
+                return MILES;
+            }
+
+            return null;
+        }
+       
         /// <summary>
         /// Prompt the user to enter the distance in miles
         /// Input the miles as a double number
@@ -70,15 +146,15 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputDistance()
         {
-            Console.WriteLine($"{fromDistance} {fromUnit} " +
-                $" is {toDistance} {toUnit}!");
+            Console.WriteLine($"\n {fromDistance} {fromUnit} " +
+                $" is {toDistance} {toUnit}!\n");
         }
 
         
         /// <summary>
         /// Features Stage 1
         /// </summary>
-        private void OutputHeading(string prompt)
+        private void OutputHeading()
         {
             Console.WriteLine();
             Console.WriteLine("\n-------------------------");
@@ -87,8 +163,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("  By Andrew Stephenson   ");
             Console.WriteLine("-------------------------\n");
 
-            Console.WriteLine(prompt);
-            Console.WriteLine();
+            
         }
     }
 }
