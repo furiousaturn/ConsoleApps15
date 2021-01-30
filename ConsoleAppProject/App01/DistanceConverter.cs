@@ -34,35 +34,25 @@ namespace ConsoleAppProject.App01
         private string fromUnit;
         private string toUnit;
 
+        public DistanceConverter()
+        {
+            fromUnit = MILES;
+            toUnit = FEET;
+        }
+
         /// <summary>
         /// This method will input the distance measured in miles
         /// calculate the same distance in feet, and output
         /// distance in feet
         /// </summary>
-        public void MilesToFeet()
+        public void ConvertDistance()
         {
-            OutputHeading("Converting Miles to Feet");
-            miles = InputDistance("Please enter the number of Miles > ");
-            CalculateFeet();
-            OutputDistance(miles,nameof(miles),feet,nameof(feet));
+            OutputHeading($"Converting {fromUnit} to {toUnit}");
+            fromDistance = InputDistance($"Please enter the number of {fromUnit} > ");
+            //CalculateFeet();
+            OutputDistance();
         }
 
-        public void FeetToMiles()
-        {
-            OutputHeading("Converting Feet to Miles");
-            feet = InputDistance("Please enter the number of Feet > ");
-            CalculateMiles();
-            OutputDistance(feet, nameof(feet), miles, nameof(miles));
-        }
-
-        public void MilesToMetres()
-        {
-            OutputHeading("Converting Miles to Metres");
-            metres = InputDistance("Please enter the number of Miles > ");
-            CalculateMetres();
-            OutputDistance(miles, nameof(miles), metres, nameof(metres));
-        }
-  
         /// <summary>
         /// Prompt the user to enter the distance in miles
         /// Input the miles as a double number
@@ -74,37 +64,11 @@ namespace ConsoleAppProject.App01
             return Convert.ToDouble(value);
         }
 
-            
-        /// <summary>
-        /// Features Stage 1
-        /// </summary>
-        private void CalculateFeet() 
-        {
-            feet = miles * FEET_IN_MILES;
-        }
-
-        /// <summary>
-        /// Features Stage 2
-        /// </summary>
-        private void CalculateMiles()
-        {
-            miles = feet / FEET_IN_MILES;
-        }
-
-        /// <summary>
-        /// Features Stage 2
-        /// </summary>
-        private void CalculateMetres()
-        {
-            metres = miles * METRES_IN_MILES;
-        }
 
         /// <summary>
         /// Features Stage 1
         /// </summary>
-        private void OutputDistance(
-            double fromDistance, string fromUnit,
-            double toDistance, string toUnit)
+        private void OutputDistance()
         {
             Console.WriteLine($"{fromDistance} {fromUnit} " +
                 $" is {toDistance} {toUnit}!");
