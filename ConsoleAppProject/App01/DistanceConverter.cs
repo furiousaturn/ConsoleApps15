@@ -97,14 +97,14 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private DistanceUnits SelectUnit(string prompt)
         {
-            DistanceUnits unit;
+            string choice = DisplayChoices(prompt);
+            DistanceUnits unit = ExecuteChoice(choice);
 
-            //string choice = DisplayChoices(prompt);
-            //string unit = ExecuteChoice(choice);
+            return unit;
+        }
 
-            //still need to split below -these/refactor as above.
-            //Probably use existing DiplayChoices & ExecuteChoice
-
+        private static string DisplayChoices(string prompt)
+        {
             Console.WriteLine();
             Console.WriteLine($" 1. {DistanceUnits.Feet}");
             Console.WriteLine($" 2. {DistanceUnits.Metres}");
@@ -113,6 +113,13 @@ namespace ConsoleAppProject.App01
 
             Console.Write(prompt);
             string choice = Console.ReadLine();
+
+            return choice;
+        }
+            
+        private DistanceUnits ExecuteChoice(string choice)
+        {
+            DistanceUnits unit;
 
             switch (choice)
             {
@@ -123,49 +130,13 @@ namespace ConsoleAppProject.App01
                 default: unit = DistanceUnits.NoUnit; break;
             }
 
-            if (unit ==DistanceUnits.NoUnit)
+            if (unit == DistanceUnits.NoUnit)
             {
                 Console.WriteLine("Invalid Choice!");
                 Console.WriteLine("Must be a digit 1 to 3");
             }
 
             Console.WriteLine($"\n You have chosen {unit}");
-            return unit;            
-        }
-
-        private static string DisplayChoices(string prompt)
-        {
-            Console.WriteLine();
-            Console.WriteLine($" 1. {FEET}");
-            Console.WriteLine($" 2. {METRES}");
-            Console.WriteLine($" 3. {MILES}");
-            Console.WriteLine();
-
-            Console.Write(prompt);
-            string choice = Console.ReadLine();
-            return choice;
-        }
-            
-        private static string ExecuteChoice(string choice)
-        {
-            string unit = "INVALID CHOICE";
-
-            if (choice == "1")
-            {
-                return FEET;
-            }
-            else if (choice == "2")
-            {
-                return METRES;
-            }
-            else if (choice == "3")
-            {
-                return MILES;
-            }
-
-            Console.WriteLine($"  You have selected {unit}");
-            Console.WriteLine();
-
             return unit;
         }
        
