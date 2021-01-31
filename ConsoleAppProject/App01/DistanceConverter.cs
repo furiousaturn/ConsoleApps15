@@ -113,6 +113,8 @@ namespace ConsoleAppProject.App01
             
         private static string ExecuteChoice(string choice)
         {
+            string unit = "INVALID CHOICE";
+
             if (choice == "1")
             {
                 return FEET;
@@ -126,7 +128,10 @@ namespace ConsoleAppProject.App01
                 return MILES;
             }
 
-            return null;
+            Console.WriteLine($"  You have selected {unit}");
+            Console.WriteLine();
+
+            return unit;
         }
        
         /// <summary>
