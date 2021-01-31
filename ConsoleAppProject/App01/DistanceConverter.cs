@@ -110,6 +110,12 @@ namespace ConsoleAppProject.App01
             return unit;
         }
 
+        /// <summary>
+        /// Displays choices for TO and FROM unit conversions, 
+        /// i.e. Feet, Metres and Miles, Displaying options from
+        /// enumeration class - DistanceUnits.
+        /// User can then make a choice which is returned.
+        /// </summary>
         private static string DisplayChoices(string prompt)
         {
             Console.WriteLine();
@@ -123,9 +129,16 @@ namespace ConsoleAppProject.App01
 
             return choice;
         }
-            
+        
+        /// <summary>
+        /// From choice being made, the unit from the enumeration
+        /// is set depending on the choice (1,2 or 3).
+        /// Error is displayed if outside the choices (1,2,or 3) is made,
+        /// Indicated with the enumeration = noUnit.
+        /// </summary>
         private DistanceUnits ExecuteChoice(string choice)
         {
+            //used to store local choice of unit
             DistanceUnits unit;
 
             switch (choice)
@@ -149,7 +162,7 @@ namespace ConsoleAppProject.App01
        
         /// <summary>
         /// Prompt the user to enter the distance in miles
-        /// Input the miles as a double number
+        /// Input the miles as a double number.
         /// </summary>
         private double InputDistance(string prompt)
         {
@@ -158,9 +171,9 @@ namespace ConsoleAppProject.App01
             return Convert.ToDouble(value);
         }
 
-
         /// <summary>
-        /// Features Stage 1
+        /// Outputs the FROM and TO distances and units
+        /// converted.
         /// </summary>
         private void OutputDistance()
         {
@@ -168,9 +181,9 @@ namespace ConsoleAppProject.App01
                 $" is {toDistance} {toUnit}!\n");
         }
 
-        
         /// <summary>
-        /// Features Stage 1
+        /// General Heading displayed at the start of the program
+        /// running to identify the nature of the program.
         /// </summary>
         private void OutputHeading()
         {
