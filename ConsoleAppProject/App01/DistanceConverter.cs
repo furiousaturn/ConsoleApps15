@@ -3,38 +3,40 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// This app will prompt the user to input a distance
-    /// measured in one uit (fromUnit) and it will calculate 
-    /// and output the equivalent distance in another unit (toUnit)
+    /// This app will aloow the user to convert:
+    /// 1. Miles to Feet 
+    /// 2. Feet to Miles
+    /// 3. Miles to Metres
+    /// 4. Metres to Miles
+    /// 5. Feet to Metres
+    /// 6. Metres to Feet
+    /// 
+    /// The program allows the user to select FROM distance unit
+    /// then TO distance unit (both choices can be Feet, Metres or Miles)
+    /// and displayed the conversion information.
     /// </summary>
     /// <author>
-    /// Andrew Stephenson version 0.1 (this can be updated each time)
+    /// Andrew Stephenson version 1.0
     /// </author>
     public class DistanceConverter
     {
-        
-        //Distance conversion constants
-
+        // Distance conversion constants
         public const int FEET_IN_MILES = 5280;
         public const double METRES_IN_MILES = 1609.34;
         public const double FEET_IN_METRES = 3.28084;
 
-        //Distance Unit Names
-
-        public const string FEET = "Feet";
-        public const string MILES = "Miles";
-        public const string METRES = "Metres";
-
-        // Distance variables
-
+        // From and to Distance variables
         private double fromDistance;
         private double toDistance;
 
-        //Form and to units of type enumeration
+        // fromUnit and toUnit set as enumeration types
         private DistanceUnits fromUnit;
         private DistanceUnits toUnit;
 
-
+        /// <summary>
+        /// Constructor to initialise fromUnit to Miles
+        /// and toUnit to Feet using enumeration
+        /// </summary>
         public DistanceConverter()
         {
             fromUnit = DistanceUnits.Miles;
@@ -42,15 +44,15 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// This method will input the distance measured in miles
-        /// calculate the same distance in feet, and output
-        /// distance in feet
+        /// This method will input the distance measured in a choice
+        /// of selected units, calculate the same distance in another
+        /// selected unit, and output the converted distance relevant
+        /// to the choices made.
         /// </summary>
         public void ConvertDistance()
         {
             OutputHeading();
 
-            //pass in unit on both of these?
             fromUnit = SelectUnit(" Please select the from distance unit > ");
             toUnit = SelectUnit(" Please select the to Distance unit > ");
 
@@ -63,6 +65,11 @@ namespace ConsoleAppProject.App01
             OutputDistance();
         }
 
+        /// <summary>
+        /// Calculates the conversions depending on the distance unit
+        /// selections of fromUnit and toUnit. There are 6 possible 
+        /// conversion calculations that can be made (see class header)
+        /// </summary>
         private void CalculateDistance()
         {
             if (fromUnit == DistanceUnits.Miles && toUnit == DistanceUnits.Feet)
