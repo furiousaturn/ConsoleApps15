@@ -30,14 +30,15 @@ namespace ConsoleAppProject.App01
         private double fromDistance;
         private double toDistance;
 
-        //Unit variables
-        private string fromUnit;
-        private string toUnit;
+        //Form and to units of type enumeration
+        private DistanceUnits fromUnit;
+        private DistanceUnits toUnit;
+
 
         public DistanceConverter()
         {
-            fromUnit = MILES;
-            toUnit = FEET;
+            fromUnit = DistanceUnits.Miles;
+            toUnit = DistanceUnits.Feet;
         }
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace ConsoleAppProject.App01
         {
             OutputHeading();
 
+            //pass in unit on both of these?
             fromUnit = SelectUnit(" Please select the from distance unit > ");
             toUnit = SelectUnit(" Please select the to Distance unit > ");
 
@@ -63,39 +65,72 @@ namespace ConsoleAppProject.App01
 
         private void CalculateDistance()
         {
-            if (fromUnit == MILES && toUnit == FEET)
+            if (fromUnit == DistanceUnits.Miles && toUnit == DistanceUnits.Feet)
             {
                 toDistance = fromDistance * FEET_IN_MILES;
             }
-            else if (fromUnit ==FEET && toUnit == MILES)
+            else if (fromUnit == DistanceUnits.Feet && toUnit == DistanceUnits.Miles)
             {
                 toDistance = fromDistance / FEET_IN_MILES;
             }
-            else if (fromUnit == MILES && toUnit == METRES)
+            else if (fromUnit == DistanceUnits.Miles && toUnit == DistanceUnits.Metres)
             {
                 toDistance = fromDistance * METRES_IN_MILES;
             }
-            else if (fromUnit == METRES && toUnit == MILES)
+            else if (fromUnit == DistanceUnits.Metres && toUnit == DistanceUnits.Miles)
             {
                 toDistance = fromDistance / METRES_IN_MILES;
             }
-            else if (fromUnit == FEET && toUnit == METRES)
+            else if (fromUnit == DistanceUnits.Feet && toUnit == DistanceUnits.Metres)
             {
                 toDistance = fromDistance * FEET_IN_METRES;
             }
-            else if (fromUnit == METRES && toUnit == FEET)
+            else if (fromUnit == DistanceUnits.Metres && toUnit == DistanceUnits.Feet)
             {
                 toDistance = fromDistance / FEET_IN_METRES;
             }
         }
 
-        private string SelectUnit(string prompt)
+        /// <summary>
+        /// Display a menu of distance units and then prompt the
+        /// user to select one and return it.
+        /// </summary>
+        private DistanceUnits SelectUnit(string prompt)
         {
-            string choice = DisplayChoices(prompt);
-            string unit = ExecuteChoice(choice);
-            
+            DistanceUnits unit;
+
+            //string choice = DisplayChoices(prompt);
+            //string unit = ExecuteChoice(choice);
+
+            //still need to split below -these/refactor as above.
+            //Probably use existing DiplayChoices & ExecuteChoice
+
+            Console.WriteLine();
+            Console.WriteLine($" 1. {DistanceUnits.Feet}");
+            Console.WriteLine($" 2. {DistanceUnits.Metres}");
+            Console.WriteLine($" 3. {DistanceUnits.Miles}");
+            Console.WriteLine();
+
+            Console.Write(prompt);
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1": unit = DistanceUnits.Feet; break;
+                case "2": unit = DistanceUnits.Metres; break;
+                case "3": unit = DistanceUnits.Miles; break;
+
+                default: unit = DistanceUnits.NoUnit; break;
+            }
+
+            if (unit ==DistanceUnits.NoUnit)
+            {
+                Console.WriteLine("Invalid Choice!");
+                Console.WriteLine("Must be a digit 1 to 3");
+            }
+
             Console.WriteLine($"\n You have chosen {unit}");
-            return unit;
+            return unit;            
         }
 
         private static string DisplayChoices(string prompt)
