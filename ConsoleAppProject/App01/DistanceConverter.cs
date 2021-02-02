@@ -161,8 +161,8 @@ namespace ConsoleAppProject.App01
         }
        
         /// <summary>
-        /// Prompt the user to enter the distance in miles
-        /// Input the miles as a double number.
+        /// Prompt the user to enter the distance in chosen unit
+        /// Input the chosen unit as a double number.
         /// </summary>
         private double InputDistance(string prompt)
         {
