@@ -33,13 +33,36 @@ namespace ConsoleAppProject.App02
         private double metre;
 
         /// <summary>
-        /// Main program in class
+        /// Ask user to select units of measurment
+        /// to work with, either Imperial or Metric.
+        /// Get the height and weight of the user
+        /// to calculate the BMI.  Dipaly the weight category
+        /// according to set categories in the program
         /// </summary>
-        public void CalculateBMI()
+        public void CalculateIndex()
         {
-            //yet to build
-            Console.WriteLine("This is the BMI calculator under development");
+            //Simple heading for application
+            Console.WriteLine("BMI Calculator");
+
+            //Select units method called to make the unit choice
+            UnitSystems unitSystem = SelectUnits();
+
         }
 
+        /// <summary>
+        /// Get the Users choice of unit, either
+        /// Imperial or Metric from a basic menu.
+        /// </summary>
+        private UnitSystems SelectUnits()
+        {
+            Console.WriteLine("1. Imperial Units");
+            Console.WriteLine("2. Metric Units");
+
+            Console.Write("\n Choose your unit type > ");
+            string typeChoice = Console.ReadLine();
+
+            if (typeChoice == "1") return UnitSystems.Imperial;
+            else return UnitSystems.Metric;
+        }
     }
 }

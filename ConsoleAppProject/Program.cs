@@ -42,7 +42,7 @@ namespace ConsoleAppProject
             }
             else if (option == "2")
             {
-                calculator.CalculateBMI();
+                calculator.CalculateIndex();
             }
 
 
