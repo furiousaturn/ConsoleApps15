@@ -14,8 +14,8 @@ namespace ConsoleAppProject.App02
     {
         //Constants for how many pounds in a stone
         //and how many inches in a foot.
-        public const int POUNDS_TO_STONES = 14;
-        public const int INCHES_TO_FEET = 12;
+        public const int POUNDS_IN_STONES = 14;
+        public const int INCHES_IN_FEET = 12;
 
         //Constants to define upper limit values
         //defined in the WHO Weight Status table
