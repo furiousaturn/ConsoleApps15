@@ -64,5 +64,37 @@ namespace ConsoleAppProject.App02
             if (typeChoice == "1") return UnitSystems.Imperial;
             else return UnitSystems.Metric;
         }
+
+        /// <summary>
+        /// Method prompts user and
+        /// allows input of a number
+        /// converted to a double
+        /// </summary>
+        public double InputNumber(string prompt)
+        {
+            Console.Write(prompt);
+            string value = Console.ReadLine();
+            double number = Convert.ToDouble(value);
+
+            return number;
+        }
+
+        /// <summary>
+        /// Input imperial details and convert 
+        /// height into inches  and weight
+        /// into pounds. 
+        /// </summary>
+        private void InputImperialDetails()
+        {
+            Console.Write("Input your weight (stones & pounds) > \n");
+            double stones = InputNumber("Input weight in Stones > ");
+            pound = InputNumber("Input weight in Pounds > ");
+            pound += stones * POUNDS_IN_STONES;
+
+            Console.WriteLine("Input your height (feet & inches) > \n");
+            double feet = InputNumber("Input height in Feet > ");
+            inch = (int)InputNumber("Input height in Inches > ");
+            inch += (int)feet * INCHES_IN_FEET;
+        }
     }
 }
