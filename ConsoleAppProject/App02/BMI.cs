@@ -80,6 +80,17 @@ namespace ConsoleAppProject.App02
         }
 
         /// <summary>
+        /// Input metric values for 
+        /// height in metres and 
+        /// weight in kilograms.
+        /// </summary>
+        private void InputMetricDetails()
+        {
+            metre = InputNumber("Input height in metres > ");
+            kilogram = InputNumber("Input weight in kilograms > ");
+        }
+
+        /// <summary>
         /// Input imperial details and convert 
         /// height into inches  and weight
         /// into pounds. 
