@@ -27,7 +27,7 @@ namespace ConsoleAppProject
             Console.WriteLine();
             Console.Beep();
 
-            //provide choices for APP01 and App02 here - temporary and wil change and expand.
+            //provide choices for APP01 and App02 here - temporary and will change and expand.
             Console.WriteLine("\n Options\n");
             Console.WriteLine("--------------------------");
             Console.WriteLine("\n 1. Distance Converter\n");
@@ -43,11 +43,7 @@ namespace ConsoleAppProject
             else if (option == "2")
             {
                 calculator.CalculateIndex();
-            }
-
-
-            
-            
+            }  
         }
     }
 }
