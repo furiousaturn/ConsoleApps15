@@ -19,11 +19,15 @@
             using metric or imperial units
         </p>
         <p>
-            <input type="number" placeholder="Feet" />
-            <input type="number" placeholder="Inches" />
+            <input type="number" placeholder="Feet" 
+                   value="6" asp-for="@Model.Feet" />
+            
+            <input type="number" placeholder="Inches" 
+                   value="0" asp-for="@Model.Inch" />
         </p>
         <p>
-            <input type="number" placeholder="Centimetres" />
+            <input type="number" placeholder="Centimetres"
+                   asp-for="@Model.Centimetre" />
         </p>
 
         <h2>Weight</h2>
@@ -32,11 +36,15 @@
             using metric or imperial units
         </p>
         <p>
-            <input type="number" placeholder="Stones" value="" />
-            <input type="number" placeholder="Pounds" value="" />
+            <input type="number" placeholder="Stones" 
+                   value="11" asp-for="@Model.Stone" />
+
+            <input type="number" placeholder="Pounds" 
+                   value="5" asp-for="@Model.Pound" />
         </p>
         <p>
-            <input type="number" placeholder="Kilograms" value="" />
+            <input type="number" placeholder="Kilograms" 
+                   asp-for="@Model.Kilogram" />
         </p>
         <p>
             <button class="btn btn-success" type="submit">Calculate</button>

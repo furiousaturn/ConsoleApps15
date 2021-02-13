@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using WebApps.Models;
+using ConsoleAppProject.App02;
+
 
 namespace WebApps.Controllers
 {
@@ -23,11 +20,37 @@ namespace WebApps.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult BMICalculator()
         {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult BMICalculator(BMI bmi)
+        {
+            if (bmi.Centimetre > 140)
+            {
+                bmi.CalculateMetricBMI();
+            }
+            else if (bmi.Feet > 4 && bmi.Stone > 6)
+            {
+                bmi.CalculateImperialBMI();
+            }
+            else
+            {
+                ViewBag.Error = "Your have entered values too small for any adult!";
+                return View();
+            }
+            double bmiIndex = bmi.IndexBMI;
+            
+            return RedirectToAction("HealthMessage", new { bmiIndex });
+        }
+
+        public IActionResult HealthMessage(double bmiIndex)
+        {
+            return View(bmiIndex);
+        }
         public IActionResult StudentMarks()
         {
             return View();
