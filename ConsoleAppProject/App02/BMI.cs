@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ConsoleAppProject.App02
 {
@@ -27,13 +28,23 @@ namespace ConsoleAppProject.App02
         public const double OBESE_CLASS_III = 40.0;
 
         //Imperial and Metric variables
-        private double pound;
-        private int inch;
-        private double kilogram;
+        public double Pound { get; set; }
+        public int Inch { get; set; }
+        public double Kilogram { get; set; }
+        
+        public int Centimetre { get; set; }
+        public int Stone { get; set; }
+        public int Feet { get; set; }
+
+        public UnitSystems UnitSystems
+        {
+            get => default;
+        }
+
         private double metre;
 
         //BMI Index
-        public double indexBMI;
+        public double IndexBMI;
 
         /// <summary>
         /// Ask user to select units of measurment
@@ -66,8 +77,8 @@ namespace ConsoleAppProject.App02
 
             //Output the required messages for BMI calculations
             //and if you are BAME and therefore at higher risk
-            OutputHealthMessage();
-            OutputBameMessage();
+            Console.WriteLine(OutputHealthMessage());
+            Console.WriteLine(OutputBameMessage());
         }
 
         /// <summary>
@@ -107,8 +118,8 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void InputMetricDetails()
         {
-            metre = InputNumber("Input height in metres > ");
-            kilogram = InputNumber("Input weight in kilograms > ");
+            Metre = InputNumber("Input height in metres > ");
+            Kilogram = InputNumber("Input weight in kilograms > ");
         }
 
         /// <summary>
@@ -120,13 +131,13 @@ namespace ConsoleAppProject.App02
         {
             Console.Write("Input your weight (stones & pounds)\n");
             double stones = InputNumber("Input weight in Stones > ");
-            pound = InputNumber("Input weight in Pounds > ");
-            pound += stones * POUNDS_IN_STONES;
+            Pound = InputNumber("Input weight in Pounds > ");
+            Pound += stones * POUNDS_IN_STONES;
 
             Console.WriteLine("Input your height (feet & inches)\n");
             double feet = InputNumber("Input height in Feet > ");
-            inch = (int)InputNumber("Input height in Inches > ");
-            inch += (int)feet * INCHES_IN_FEET;
+            Inch = (int)InputNumber("Input height in Inches > ");
+            Inch += (int)feet * INCHES_IN_FEET;
         }
 
         /// <summary>
@@ -136,7 +147,7 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculateMetricBMI()
         {
-            indexBMI = kilogram / (metre * metre);
+            IndexBMI = Kilogram / (Metre * Metre);
         }
 
         /// <summary>
@@ -146,56 +157,65 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculateImperialBMI()
         {
-            indexBMI = pound * 703 / (inch * inch);
+            IndexBMI = Pound * 703 / (Inch * Inch);
         }
 
         /// <summary>
         /// Output of BAME message 
         /// for higher risk people
         /// </summary>
-        public void OutputBameMessage()
+        public string OutputBameMessage()
         {
-            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-            Console.WriteLine("There are higher risks for ");
-            Console.WriteLine("Black, Asian or other minority people");
-            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-            Console.WriteLine("Write a suitable message here!!");
-            Console.WriteLine("explaining increased risk for BAME");
-            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            StringBuilder message = new StringBuilder("\n");
+
+
+            message.Append("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            message.Append("There are higher risks for ");
+            message.Append("Black, Asian or other minority people");
+            message.Append("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            message.Append("Write a suitable message here!!");
+            message.Append("explaining increased risk for BAME");
+            message.Append("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+
+            return message.ToString();
         }
     
-        public void OutputHealthMessage()
+        public string OutputHealthMessage()
         {
-            if (indexBMI < UNDERWEIGHT)
+            StringBuilder message = new StringBuilder("\n");
+
+            if (IndexBMI < UNDERWEIGHT)
             {
-                Console.WriteLine($"BMI is {indexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as underweight.");
             }
-            else if (indexBMI <= NORMAL)
+            else if (IndexBMI <= NORMAL)
             {
-                Console.WriteLine($"BMI is {indexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as normal weight.");
             }
-            else if (indexBMI <= OVERWEIGHT)
+            else if (IndexBMI <= OVERWEIGHT)
             {
-                Console.WriteLine($"BMI is {indexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as overweight.");
             }
-            else if (indexBMI <= OBESE_CLASS_I)
+            else if (IndexBMI <= OBESE_CLASS_I)
             {
-                Console.WriteLine($"BMI is {indexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as Obese Class I.");
             }
-            else if (indexBMI <= OBESE_CLASS_II)
+            else if (IndexBMI <= OBESE_CLASS_II)
             {
-                Console.WriteLine($"BMI is {indexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as Obese Class II.");
             }
-            else if (indexBMI <= OBESE_CLASS_III)
+            else if (IndexBMI <= OBESE_CLASS_III)
             {
-                Console.WriteLine($"BMI is {indexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as Obese Class III.");
             }
+
+            return message.ToString();
         }
 
     }
