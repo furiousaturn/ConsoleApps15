@@ -118,7 +118,8 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void InputMetricDetails()
         {
-            Metre = InputNumber("Input height in metres > ");
+            Centimetre = (int)InputNumber("Input height in centimetres > ");
+            metre = (double)Centimetre/100;
             Kilogram = InputNumber("Input weight in kilograms > ");
         }
 
@@ -130,14 +131,12 @@ namespace ConsoleAppProject.App02
         private void InputImperialDetails()
         {
             Console.Write("Input your weight (stones & pounds)\n");
-            double stones = InputNumber("Input weight in Stones > ");
-            Pound = InputNumber("Input weight in Pounds > ");
-            Pound += stones * POUNDS_IN_STONES;
-
+            Stone = (int)InputNumber("Input weight in Stones > ");
+            Pound = (int)InputNumber("Input weight in Pounds > ");
+            
             Console.WriteLine("Input your height (feet & inches)\n");
-            double feet = InputNumber("Input height in Feet > ");
+            Feet = (int)InputNumber("Input height in Feet > ");
             Inch = (int)InputNumber("Input height in Inches > ");
-            Inch += (int)feet * INCHES_IN_FEET;
         }
 
         /// <summary>
@@ -147,7 +146,7 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculateMetricBMI()
         {
-            IndexBMI = Kilogram / (Metre * Metre);
+            IndexBMI = Kilogram / (metre * metre);
         }
 
         /// <summary>
@@ -157,7 +156,10 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculateImperialBMI()
         {
-            IndexBMI = Pound * 703 / (Inch * Inch);
+            Inch += Feet * INCHES_IN_FEET;
+            Pound += Stone * POUNDS_IN_STONES;
+            
+            IndexBMI = (double)Pound * 703 / (Inch * Inch);
         }
 
         /// <summary>
