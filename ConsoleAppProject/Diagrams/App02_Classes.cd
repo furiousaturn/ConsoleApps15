@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ConsoleAppProject.App02.BMI">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABcAAAIIACAAAAAAAAAAQBASCpIAAAAAHAgIACACAAQ=</HashCode>
+      <FileName>App02\BMI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UnitSystems" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="ConsoleAppProject.App02.UnitSystems">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>App02\UnitSystems.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

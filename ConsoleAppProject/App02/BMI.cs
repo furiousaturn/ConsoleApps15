@@ -36,11 +36,6 @@ namespace ConsoleAppProject.App02
         public int Stone { get; set; }
         public int Feet { get; set; }
 
-        public UnitSystems UnitSystems
-        {
-            get => default;
-        }
-
         private double metre;
 
         //BMI Index
@@ -220,5 +215,13 @@ namespace ConsoleAppProject.App02
             return message.ToString();
         }
 
+        //code created by making association in class designer
+        public UnitSystems UnitSystems
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
