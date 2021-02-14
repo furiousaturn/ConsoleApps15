@@ -10,6 +10,16 @@
       <Property Name="UnitSystems" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="ConsoleHelpers.ConsoleHelper">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAAAAAAACAAoAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsoleHelper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BMI" />
+    </ShowAsAssociation>
+  </Class>
   <Enum Name="ConsoleAppProject.App02.UnitSystems">
     <Position X="5.25" Y="1" Width="1.5" />
     <TypeIdentifier>

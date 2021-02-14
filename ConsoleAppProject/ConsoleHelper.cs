@@ -5,6 +5,15 @@ namespace ConsoleHelpers
 {
     public static class ConsoleHelper
     {
+        //Created by Class Designer.  Ignore.
+        public static ConsoleAppProject.App02.BMI BMI
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// This method outputs a heading showing the title
         /// of the application or method and the author
