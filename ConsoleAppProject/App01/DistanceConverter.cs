@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleHelpers;
 
 namespace ConsoleAppProject.App01
 {
@@ -33,7 +34,7 @@ namespace ConsoleAppProject.App01
         public DistanceUnits FromUnit { get; set; }
         public DistanceUnits ToUnit { get; set; }
 
-        //code created by class designer
+        //additional code created by class designer
         public DistanceUnits DistanceUnits
         {
             get => default;
@@ -60,14 +61,14 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            OutputHeading();
+            ConsoleHelper.OutputHeading("Distance Converter");
 
             FromUnit = SelectUnit(" Please select the from distance unit > ");
             ToUnit = SelectUnit(" Please select the to Distance unit > ");
 
             Console.WriteLine($"\n Converting {FromUnit} to {ToUnit}");
 
-            FromDistance = InputDistance($" Please enter the number of {FromUnit} > ");
+            FromDistance = ConsoleHelper.InputNumber($" Please enter the number of {FromUnit} > ");
 
             CalculateDistance();
 
@@ -113,71 +114,33 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private DistanceUnits SelectUnit(string prompt)
         {
-            string choice = DisplayChoices(prompt);
-            DistanceUnits unit = ExecuteChoice(choice);
-
-            return unit;
-        }
-
-        /// <summary>
-        /// Displays choices for TO and FROM unit conversions, 
-        /// i.e. Feet, Metres and Miles, Displaying options from
-        /// enumeration class - DistanceUnits.
-        /// User can then make a choice which is returned.
-        /// </summary>
-        private static string DisplayChoices(string prompt)
-        {
-            Console.WriteLine();
-            Console.WriteLine($" 1. {DistanceUnits.Feet}");
-            Console.WriteLine($" 2. {DistanceUnits.Metres}");
-            Console.WriteLine($" 3. {DistanceUnits.Miles}");
-            Console.WriteLine();
-
-            Console.Write(prompt);
-            string choice = Console.ReadLine();
-
-            return choice;
-        }
-        
-        /// <summary>
-        /// From choice being made, the unit from the enumeration
-        /// is set depending on the choice (1,2 or 3).
-        /// Error is displayed if outside the choices (1,2,or 3) is made,
-        /// Indicated with the enumeration = noUnit.
-        /// </summary>
-        private DistanceUnits ExecuteChoice(string choice)
-        {
-            //used to store local choice of unit
-            DistanceUnits unit;
-
-            switch (choice)
+            string[] choices =
             {
-                case "1": unit = DistanceUnits.Feet; break;
-                case "2": unit = DistanceUnits.Metres; break;
-                case "3": unit = DistanceUnits.Miles; break;
+                DistanceUnits.Feet.ToString(),
+                DistanceUnits.Metres.ToString(),
+                DistanceUnits.Miles.ToString()
+            };
 
-                default: unit = DistanceUnits.NoUnit; break;
-            }
+            Console.Write("\n");
+            Console.WriteLine(prompt);
+            Console.Write("\n");
 
-            if (unit == DistanceUnits.NoUnit)
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
+
+            //Works but might be a neater way to 
+            //convert choice to enum value.
+            if (choiceNo==1) 
             {
-                Console.WriteLine("Invalid Choice!");
-                Console.WriteLine("Must be a digit 1 to 3");
+                return DistanceUnits.Feet;
             }
-
-            Console.WriteLine($"\n You have chosen {unit}");
-            return unit;
-        }
-       
-        /// <summary>
-        /// Prompt the user to enter the distance in chosen unit
-        /// Input the chosen unit as a double number.
-        /// </summary>
-        private double InputDistance(string prompt)
-        {
-            Console.Write(prompt);
-            string value = Console.ReadLine();
-            return Convert.ToDouble(value);
+            else if (choiceNo==2)
+            {
+                return DistanceUnits.Metres;
+            }
+            else
+            {
+                return DistanceUnits.Miles;
+            }
         }
 
         /// <summary>
@@ -188,22 +151,6 @@ namespace ConsoleAppProject.App01
         {
             Console.WriteLine($"\n {FromDistance} {FromUnit} " +
                 $" is {ToDistance} {ToUnit}!\n");
-        }
-
-        /// <summary>
-        /// General Heading displayed at the start of the program
-        /// running to identify the nature of the program.
-        /// </summary>
-        private void OutputHeading()
-        {
-            Console.WriteLine();
-            Console.WriteLine("\n-------------------------");
-            Console.WriteLine("    DISTANCE CONVERTER");
-            Console.WriteLine("\n-------------------------");
-            Console.WriteLine("  By Andrew Stephenson   ");
-            Console.WriteLine("-------------------------\n");
-
-            
         }
     }
 }

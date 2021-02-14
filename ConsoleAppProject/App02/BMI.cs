@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using ConsoleHelpers;
 
 namespace ConsoleAppProject.App02
 {
@@ -50,10 +51,8 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculateIndex()
         {
-            //Simple heading for application
-            Console.WriteLine("-=-=-=-=-=-=-=-=");
-            Console.WriteLine("BMI Calculator");
-            Console.WriteLine("-=-=-=-=-=-=-=-=");
+            //call library class consolehelper with custom heading
+            ConsoleHelper.OutputHeading("Body Mass Index Calculator");
 
             //Select units method called to make the unit choice
             UnitSystems unitSystem = SelectUnits();

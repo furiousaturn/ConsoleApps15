@@ -3,7 +3,7 @@
 
 namespace ConsoleHelpers
 {
-    public static class UserLib
+    public static class ConsoleHelper
     {
         /// <summary>
         /// This method outputs a heading showing the title
@@ -14,7 +14,7 @@ namespace ConsoleHelpers
             Console.WriteLine();
             Console.WriteLine(" ------------------------------");
             Console.WriteLine($"  {title}");
-            Console.WriteLine("        by Andrtew Stephenson  ");
+            Console.WriteLine("        by Andrew Stephenson  ");
             Console.WriteLine(" ------------------------------");
             Console.WriteLine("");
         }
