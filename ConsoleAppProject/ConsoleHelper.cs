@@ -78,7 +78,7 @@ namespace ConsoleHelpers
         public static double InputNumber(string prompt)
         {
             double number = 0;
-            bool isValid;
+            bool isValid = false;
 
             do
             {
