@@ -102,29 +102,15 @@ namespace ConsoleAppProject.App02
         }
 
         /// <summary>
-        /// Method prompts user and
-        /// allows input of a number
-        /// converted to a double
-        /// </summary>
-        public double InputNumber(string prompt)
-        {
-            Console.Write(prompt);
-            string value = Console.ReadLine();
-            double number = Convert.ToDouble(value);
-
-            return number;
-        }
-
-        /// <summary>
         /// Input metric values for 
         /// height in metres and 
         /// weight in kilograms.
         /// </summary>
         private void InputMetricDetails()
         {
-            Centimetre = (int)InputNumber("Input height in centimetres > ");
+            Centimetre = (int)ConsoleHelper.InputNumber("Input height in centimetres > ");
             metre = (double)Centimetre/100;
-            Kilogram = InputNumber("Input weight in kilograms > ");
+            Kilogram = ConsoleHelper.InputNumber("Input weight in kilograms > ");
         }
 
         /// <summary>
@@ -135,12 +121,12 @@ namespace ConsoleAppProject.App02
         private void InputImperialDetails()
         {
             Console.Write("Input your weight (stones & pounds)\n");
-            Stone = (int)InputNumber("Input weight in Stones > ");
-            Pound = (int)InputNumber("Input weight in Pounds > ");
+            Stone = (int)ConsoleHelper.InputNumber("Input weight in Stones > ");
+            Pound = (int)ConsoleHelper.InputNumber("Input weight in Pounds > ");
             
             Console.WriteLine("Input your height (feet & inches)\n");
-            Feet = (int)InputNumber("Input height in Feet > ");
-            Inch = (int)InputNumber("Input height in Inches > ");
+            Feet = (int)ConsoleHelper.InputNumber("Input height in Feet > ");
+            Inch = (int)ConsoleHelper.InputNumber("Input height in Inches > ");
         }
 
         /// <summary>
@@ -192,27 +178,27 @@ namespace ConsoleAppProject.App02
 
             if (IndexBMI < UNDERWEIGHT)
             {
-                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as underweight.");
             }
             else if (IndexBMI <= NORMAL)
             {
-                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as normal weight.");
             }
             else if (IndexBMI <= OVERWEIGHT)
-            {
-                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
+            { 
+                message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as overweight.");
             }
             else if (IndexBMI <= OBESE_CLASS_I)
             {
-                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as Obese Class I.");
             }
             else if (IndexBMI <= OBESE_CLASS_II)
             {
-                message.Append($"BMI is {IndexBMI:0.00}, therefore" +
+                message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as Obese Class II.");
             }
             else if (IndexBMI <= OBESE_CLASS_III)
@@ -226,11 +212,6 @@ namespace ConsoleAppProject.App02
 
         //code created by making association in class designer
         public UnitSystems UnitSystems
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        {get => default;set{}}
     }
 }
