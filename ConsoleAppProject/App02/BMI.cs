@@ -81,14 +81,24 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private UnitSystems SelectUnits()
         {
-            Console.WriteLine("1. Imperial Units");
-            Console.WriteLine("2. Metric Units");
+            string[] choices =
+           {
+                UnitSystems.Metric.ToString(),
+                UnitSystems.Imperial.ToString(),
+            };
 
-            Console.Write("\n Choose your unit type > ");
-            string typeChoice = Console.ReadLine();
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
 
-            if (typeChoice == "1") return UnitSystems.Imperial;
-            else return UnitSystems.Metric;
+            //Works but might be a neater way to 
+            //convert choice to enum value.
+            if (choiceNo == 1)
+            {
+                return UnitSystems.Metric;
+            }
+            else
+            {
+                return UnitSystems.Imperial;
+            }
         }
 
         /// <summary>
