@@ -50,8 +50,6 @@ namespace ConsoleAppProject.App01
         {
             FromUnit = DistanceUnits.Miles;
             ToUnit = DistanceUnits.Feet;
-            //FromDistance = 0;
-            //ToDistance = 0;
         }
 
         /// <summary>
