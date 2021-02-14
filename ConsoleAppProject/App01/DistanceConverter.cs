@@ -26,8 +26,8 @@ namespace ConsoleAppProject.App01
         public const double FEET_IN_METRES = 3.28084;
 
         // From and to Distance variables
-        public double FromDistance { get; set; }
-        public double ToDistance { get; set; }
+        public double FromDistance { get; set; } 
+        public double ToDistance { get; set; } 
 
         // fromUnit and toUnit set as enumeration types
         public DistanceUnits FromUnit { get; set; }
@@ -41,6 +41,8 @@ namespace ConsoleAppProject.App01
         {
             FromUnit = DistanceUnits.Miles;
             ToUnit = DistanceUnits.Feet;
+            //FromDistance = 0;
+            //ToDistance = 0;
         }
 
         /// <summary>
@@ -57,7 +59,7 @@ namespace ConsoleAppProject.App01
             ToUnit = SelectUnit(" Please select the to Distance unit > ");
 
             Console.WriteLine($"\n Converting {FromUnit} to {ToUnit}");
-           
+
             FromDistance = InputDistance($" Please enter the number of {FromUnit} > ");
 
             CalculateDistance();

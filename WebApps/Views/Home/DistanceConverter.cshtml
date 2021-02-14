@@ -14,56 +14,60 @@
     </p>
 </header>
 
-<form method="post">
+<section>
+    <form method="post">
 
-    <h2>Convert from:</h2>
-    <p>
-        <label>From Unit:</label>
-        <select asp-for="@Model.FromUnit">
-            <option>@DistanceUnits.Miles</option>
-            <option>@DistanceUnits.Metres</option>
-            <option>@DistanceUnits.Feet</option>
-        </select>
-    </p>
-    <p>
-        @if (Model.FromDistance == 0)
-        {
-            <input type="text" asp-for="@Model.FromDistance" value=""
-                   placeholder="From Distance" required />
-        }
-        else
-        {
-            <input type="text" asp-for="@Model.FromDistance"
-                   placeholder="From Distance" required />
-        }
-    </p>
+        <h2>Convert from:</h2>
+        <p>
+            <label>From Unit: </label>
+            <select asp-for="@Model.FromUnit">
+                <option>@DistanceUnits.Miles</option>
+                <option>@DistanceUnits.Metres</option>
+                <option>@DistanceUnits.Feet</option>
+            </select>
+        </p>
+        <p>
+           
+        <p>
+            @if (Model.FromDistance == 0)
+            {
+                <input type="text" asp-for="@Model.FromDistance" value=""
+                       placeholder="From Distance" required />
+            }
+            else
+            {
+                <input type="text" asp-for="@Model.FromDistance"
+                       placeholder="From Distance" required />
+            }
+        </p>
 
-    <h2>Convert to:</h2>
-    <p>
-        <label>From Unit:</label>
-        <select asp-for="@Model.ToUnit">
-            <option>@DistanceUnits.Miles</option>
-            <option>@DistanceUnits.Metres</option>
-            <option>@DistanceUnits.Feet</option>
-        </select>
-    </p>
+        <h2>Convert to:</h2>
+        <p>
+            <label>From Unit:</label>
+            <select asp-for="@Model.ToUnit">
+                <option>@DistanceUnits.Miles</option>
+                <option>@DistanceUnits.Metres</option>
+                <option>@DistanceUnits.Feet</option>
+            </select>
+        </p>
 
-    <p>
-        @if (Model.ToDistance == 0)
-        {
-            <input type="text" asp-for="@Model.ToDistance" value=""
-                   placeholder="To Distance" readonly />
-        }
-        else
-        {
-            <input type="text" asp-for="@Model.ToDistance"
-                   value="@Model.ToDistance.ToString("0.00")"
-                   placeholder="To Distance" readonly />
-        }
-    </p>
+      
+        <p>
+            @if (Model.ToDistance == 0)
+            {
+                <input type="text" asp-for="@Model.ToDistance" value=""
+                       placeholder="To Distance" readonly />
+            }
+            else
+            {
+                <input type="text" asp-for="@Model.ToDistance"
+                       value="@Model.ToDistance.ToString("0.00")"
+                       placeholder="To Distance" readonly />
+            }
+        </p>
+        <p>
+            <button class="btn btn-success" type="submit">Calculate</button>
+        </p>
 
-    <p>
-        <button class="btn btn-success" type="submit">Calculate</button>
-    </p>
-
-</form>
+    </form>
+</section>
