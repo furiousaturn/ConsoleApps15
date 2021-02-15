@@ -96,11 +96,11 @@ namespace ConsoleAppProject.App01
             }
             else if (FromUnit == DistanceUnits.Feet && ToUnit == DistanceUnits.Metres)
             {
-                ToDistance = FromDistance * FEET_IN_METRES;
+                ToDistance = FromDistance / FEET_IN_METRES;
             }
             else if (FromUnit == DistanceUnits.Metres && ToUnit == DistanceUnits.Feet)
             {
-                ToDistance = FromDistance / FEET_IN_METRES;
+                ToDistance = FromDistance * FEET_IN_METRES;
             }
         }
 
@@ -145,8 +145,8 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputDistance()
         {
-            Console.WriteLine($"\n {FromDistance} {FromUnit} " +
-                $" is {ToDistance} {ToUnit}!\n");
+            Console.WriteLine($"\n {FromDistance:0.00} {FromUnit} " +
+                $" is {ToDistance:0.00} {ToUnit}!\n");
         }
     }
 }
