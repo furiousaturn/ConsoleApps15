@@ -26,17 +26,11 @@ namespace ConsoleAppProject.App03
         public int MinMark { get; set; }
         public int MaxMark { get; set; }
 
+
+        //Associations in class diagram
         public Grades Grades
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        //Attributes
-
-
+        {get => default;set{}}
+        
         /// <summary>
         /// Constructor
         /// </summary>
@@ -52,6 +46,14 @@ namespace ConsoleAppProject.App03
 
             GradeProfile = new int[(int)Grades.A + 1];
             Marks = new int[Students.Length];
+        }
+
+        /// <summary>
+        /// Display menu of options
+        /// </summary>
+        public void OutputMenu()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -73,6 +75,23 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
+        /// List all the students and display 
+        /// their name and current Grade
+        /// </summary>
+        public void OutputGrades()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Output Stats - Mean. Max, Min
+        /// </summary>
+        public void OutputStats()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Outputs Grades for each student
         /// </summary>
         public void OutputGradeProfile()
@@ -89,10 +108,7 @@ namespace ConsoleAppProject.App03
             Console.WriteLine();
         }
 
-        public void DisplayMenu()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         /// <summary>
         /// Convert a mark into a grade 
