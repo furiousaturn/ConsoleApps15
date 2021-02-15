@@ -146,6 +146,161 @@ namespace ConsoleApp.Tests
         }
 
 
+        [TestMethod]
+
+        ///<summary>
+        ///Testing code for calculating on Imperial Units
+        ///The Body Mas Index (BMI) taking Height in 
+        ///Feet and Inches and weight in Stones and Pounds
+        ///Testing Underweight
+        /// </summary>
+        public void TestImperialUnderweight()
+        {
+            //Arrange stage
+            BMI bmi = new BMI();
+            bmi.Feet = 6;
+            bmi.Inch = 2;
+            bmi.Stone = 10;
+            bmi.Pound = 3;
+
+
+            //Act Stage
+            bmi.CalculateImperialBMI();
+            double expectedImperialBMI = 18.36;
+
+            //Assert Stage
+            Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.IndexBMI, 2));
+        }
+
+        [TestMethod]
+
+        ///<summary>
+        ///Testing code for calculating on Imperial Units
+        ///The Body Mas Index (BMI) taking Height in 
+        ///Feet and Inches and weight in Stones and Pounds
+        ///Testing Normal Weight Range
+        /// </summary>
+        public void TestImperialNormal()
+        {
+            //Arrange stage
+            BMI bmi = new BMI();
+            bmi.Feet = 6;
+            bmi.Inch = 2;
+            bmi.Stone = 11;
+            bmi.Pound = 6;
+
+
+            //Act Stage
+            bmi.CalculateImperialBMI();
+            double expectedImperialBMI = 20.54;
+
+            //Assert Stage
+            Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.IndexBMI, 2));
+        }
+
+        [TestMethod]
+
+        ///<summary>
+        ///Testing code for calculating on Imperial Units
+        ///The Body Mas Index (BMI) taking Height in 
+        ///Feet and Inches and weight in Stones and Pounds
+        ///Testing Overweight
+        /// </summary>
+        public void TestImperialOverweight()
+        {
+            //Arrange stage
+            BMI bmi = new BMI();
+            bmi.Feet = 6;
+            bmi.Inch = 2;
+            bmi.Stone = 14;
+            bmi.Pound = 2;
+
+
+            //Act Stage
+            bmi.CalculateImperialBMI();
+            double expectedImperialBMI = 25.42;
+
+            //Assert Stage
+            Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.IndexBMI, 2));
+        }
+
+        [TestMethod]
+
+        ///<summary>
+        ///Testing code for calculating on Imperial Units
+        ///The Body Mas Index (BMI) taking Height in 
+        ///Feet and Inches and weight in Stones and Pounds
+        ///Testing Obese Class I
+        /// </summary>
+        public void TestImperialObeseI()
+        {
+            //Arrange stage
+            BMI bmi = new BMI();
+            bmi.Feet = 6;
+            bmi.Inch = 2;
+            bmi.Stone = 18;
+            bmi.Pound = 0;
+
+
+            //Act Stage
+            bmi.CalculateImperialBMI();
+            double expectedImperialBMI = 32.35;
+
+            //Assert Stage
+            Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.IndexBMI, 2));
+        }
+
+        [TestMethod]
+
+        ///<summary>
+        ///Testing code for calculating on Imperial Units
+        ///The Body Mas Index (BMI) taking Height in 
+        ///Feet and Inches and weight in Stones and Pounds
+        ///Testing Obese Class II
+        /// </summary>
+        public void TestImperialObeseII()
+        {
+            //Arrange stage
+            BMI bmi = new BMI();
+            bmi.Feet = 6;
+            bmi.Inch = 2;
+            bmi.Stone = 20;
+            bmi.Pound = 4;
+
+
+            //Act Stage
+            bmi.CalculateImperialBMI();
+            double expectedImperialBMI = 36.46;
+
+            //Assert Stage
+            Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.IndexBMI, 2));
+        }
+
+        [TestMethod]
+
+        ///<summary>
+        ///Testing code for calculating on Imperial Units
+        ///The Body Mas Index (BMI) taking Height in 
+        ///Feet and Inches and weight in Stones and Pounds
+        ///Testing Obese Class III
+        /// </summary>
+        public void TestImperialObeseIII()
+        {
+            //Arrange stage
+            BMI bmi = new BMI();
+            bmi.Feet = 6;
+            bmi.Inch = 2;
+            bmi.Stone = 22;
+            bmi.Pound = 11;
+
+
+            //Act Stage
+            bmi.CalculateImperialBMI();
+            double expectedImperialBMI = 40.95;
+
+            //Assert Stage
+            Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.IndexBMI, 2));
+        }
 
     }
 }
