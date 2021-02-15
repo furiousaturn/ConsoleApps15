@@ -23,8 +23,16 @@ namespace ConsoleAppProject.App03
         public int[] Marks { get; set; }
         public int[] GradeProfile { get; set; }
         public double Mean { get; set; }
-        public int Minimum { get; set; }
-        public int Maximum { get; set; }
+        public int MinMark { get; set; }
+        public int MaxMark { get; set; }
+
+        public Grades Grades
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         //Attributes
 
@@ -65,6 +73,28 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
+        /// Outputs Grades for each student
+        /// </summary>
+        public void OutputGradeProfile()
+        {
+            Grades grade = Grades.F;
+            Console.WriteLine();
+
+            foreach(int count in GradeProfile)
+            {
+                int percentage = count * 100 / Marks.Length;
+                Console.WriteLine($"Grade {grade}  {percentage}% Count {count}");
+                grade++;
+            }
+            Console.WriteLine();
+        }
+
+        public void DisplayMenu()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Convert a mark into a grade 
         /// using grade boundaries
         /// </summary>
@@ -74,9 +104,21 @@ namespace ConsoleAppProject.App03
             {
                 return Grades.F;
             }
-            else
+            else if (mark >=LowestGradeD && mark < LowestGradeC)
             {
                 return Grades.D;
+            }
+            else if (mark >=LowestGradeC && mark < LowestGradeB)
+            {
+                return Grades.C;
+            }
+            else if (mark >= LowestGradeB && mark < LowestGradeA)
+            {
+                return Grades.B;
+            }
+            else
+            {
+                return Grades.A;
             }
         }
 
@@ -86,7 +128,18 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void CalculateStats()
         {
-            throw new NotImplementedException();
+            double total = 0;
+            MinMark = HighestMark;
+            MaxMark = LowestMark;
+
+            foreach(int mark in Marks)
+            {
+                total += mark;
+                if (mark > MaxMark) MaxMark = mark;
+                if (mark < MinMark) MinMark = mark;
+            }
+
+            Mean = total / Marks.Length;
         }
 
         /// <summary>
@@ -94,15 +147,19 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void CalculateGradeProfile()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0;
+            }
+
+            foreach (int mark in Marks)
+            {
+                Grades grade = ConvertToGrade(mark);
+                GradeProfile[(int)grade]++;
+            }
+            OutputGradeProfile();
         }
 
-        /// <summary>
-        /// Outputs Grades for each student
-        /// </summary>
-        public void OutputGrades()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
