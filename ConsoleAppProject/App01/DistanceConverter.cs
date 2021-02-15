@@ -35,13 +35,9 @@ namespace ConsoleAppProject.App01
         public DistanceUnits ToUnit { get; set; }
 
         //additional code created by class designer
+        //for association
         public DistanceUnits DistanceUnits
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        {get => default; set{}}
 
         /// <summary>
         /// Constructor to initialise fromUnit to Miles
