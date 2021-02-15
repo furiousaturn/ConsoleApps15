@@ -22,9 +22,9 @@ namespace ConsoleAppProject.App01
     public class DistanceConverter
     {
         // Distance conversion constants
-        public const int FEET_IN_MILES = 5280;
-        public const double METRES_IN_MILES = 1609.34;
-        public const double FEET_IN_METRES = 3.28084;
+        public const int FeetInMiles = 5280;
+        public const double MetresInMiles = 1609.34;
+        public const double FeetInMetres = 3.28084;
 
         // From and to Distance variables
         public double FromDistance { get; set; } 
@@ -80,27 +80,27 @@ namespace ConsoleAppProject.App01
         {
             if (FromUnit == DistanceUnits.Miles && ToUnit == DistanceUnits.Feet)
             {
-                ToDistance = FromDistance * FEET_IN_MILES;
+                ToDistance = FromDistance * FeetInMiles;
             }
             else if (FromUnit == DistanceUnits.Feet && ToUnit == DistanceUnits.Miles)
             {
-                ToDistance = FromDistance / FEET_IN_MILES;
+                ToDistance = FromDistance / FeetInMiles;
             }
             else if (FromUnit == DistanceUnits.Miles && ToUnit == DistanceUnits.Metres)
             {
-                ToDistance = FromDistance * METRES_IN_MILES;
+                ToDistance = FromDistance * MetresInMiles;
             }
             else if (FromUnit == DistanceUnits.Metres && ToUnit == DistanceUnits.Miles)
             {
-                ToDistance = FromDistance / METRES_IN_MILES;
+                ToDistance = FromDistance / MetresInMiles;
             }
             else if (FromUnit == DistanceUnits.Feet && ToUnit == DistanceUnits.Metres)
             {
-                ToDistance = FromDistance / FEET_IN_METRES;
+                ToDistance = FromDistance / FeetInMetres;
             }
             else if (FromUnit == DistanceUnits.Metres && ToUnit == DistanceUnits.Feet)
             {
-                ToDistance = FromDistance * FEET_IN_METRES;
+                ToDistance = FromDistance * FeetInMetres;
             }
         }
 

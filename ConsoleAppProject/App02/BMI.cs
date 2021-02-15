@@ -16,17 +16,17 @@ namespace ConsoleAppProject.App02
     {
         //Constants for how many pounds in a stone
         //and how many inches in a foot.
-        public const int POUNDS_IN_STONES = 14;
-        public const int INCHES_IN_FEET = 12;
+        public const int PoundsInStones = 14;
+        public const int InchesInFeet = 12;
 
         //Constants to define upper limit values
         //defined in the WHO Weight Status table
-        public const double UNDERWEIGHT = 18.5;
-        public const double NORMAL = 24.9;
-        public const double OVERWEIGHT = 29.9;
-        public const double OBESE_CLASS_I = 34.9;
-        public const double OBESE_CLASS_II = 39.9;
-        public const double OBESE_CLASS_III = 40.0;
+        public const double Underweight = 18.5;
+        public const double Normal = 24.9;
+        public const double Overweight = 29.9;
+        public const double ObeseClassI = 34.9;
+        public const double ObeseClassII = 39.9;
+        public const double ObeseClassIII = 40.0;
 
         //Imperial and Metric variables
         public double Pound { get; set; }
@@ -146,8 +146,8 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculateImperialBMI()
         {
-            Inch += Feet * INCHES_IN_FEET;
-            Pound += Stone * POUNDS_IN_STONES;
+            Inch += Feet * InchesInFeet;
+            Pound += Stone * PoundsInStones;
             
             IndexBMI = (double)Pound * 703 / (Inch * Inch);
         }
@@ -176,32 +176,32 @@ namespace ConsoleAppProject.App02
         {
             StringBuilder message = new StringBuilder("\n");
 
-            if (IndexBMI < UNDERWEIGHT)
+            if (IndexBMI < Underweight)
             {
                 message.Append($"BMI is {IndexBMI:0.00}, therefore " +
-                    $"you are classed as underweight.");
+                    $"you are classed as Underweight.");
             }
-            else if (IndexBMI <= NORMAL)
+            else if (IndexBMI <= Normal)
             {
                 message.Append($"BMI is {IndexBMI:0.00}, therefore " +
-                    $"you are classed as normal weight.");
+                    $"you are classed as Normal weight.");
             }
-            else if (IndexBMI <= OVERWEIGHT)
+            else if (IndexBMI <= Overweight)
             { 
                 message.Append($"BMI is {IndexBMI:0.00}, therefore " +
-                    $"you are classed as overweight.");
+                    $"you are classed as Overweight.");
             }
-            else if (IndexBMI <= OBESE_CLASS_I)
+            else if (IndexBMI <= ObeseClassI)
             {
                 message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as Obese Class I.");
             }
-            else if (IndexBMI <= OBESE_CLASS_II)
+            else if (IndexBMI <= ObeseClassII)
             {
                 message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as Obese Class II.");
             }
-            else if (IndexBMI >= OBESE_CLASS_III)
+            else if (IndexBMI >= ObeseClassIII)
             {
                 message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as Obese Class III.");
