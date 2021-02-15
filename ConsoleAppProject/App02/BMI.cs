@@ -37,7 +37,7 @@ namespace ConsoleAppProject.App02
         public int Stone { get; set; }
         public int Feet { get; set; }
 
-        private double metre;
+        public double metre;
 
         //BMI Index
         public double IndexBMI;
@@ -201,7 +201,7 @@ namespace ConsoleAppProject.App02
                 message.Append($"BMI is {IndexBMI:0.00}, therefore " +
                     $"you are classed as Obese Class II.");
             }
-            else if (IndexBMI <= OBESE_CLASS_III)
+            else if (IndexBMI >= OBESE_CLASS_III)
             {
                 message.Append($"BMI is {IndexBMI:0.00}, therefore" +
                     $"you are classed as Obese Class III.");

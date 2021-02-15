@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConsoleAppProject.App01;
+using System;
 
 namespace ConsoleApp.Tests
 {
@@ -8,8 +9,10 @@ namespace ConsoleApp.Tests
     {
         [TestMethod]
 
-        //Testing code for converting Miles to Feet
-        //using conversion values as accurate tests
+        ///<summary>
+        ///Testing code for converting Miles to Feet
+        ///using conversion values as accurate tests
+        /// </summary>
         public void TestMilesToFeet()
         {
             //Arrange stage
@@ -28,8 +31,10 @@ namespace ConsoleApp.Tests
 
         [TestMethod]
 
-        //Testing code for converting Feet to Miles
-        //using conversion values as accurate tests
+        ///<summary>
+        ///Testing code for converting Feet to Miles
+        ///using conversion values as accurate tests
+        /// </summary>
         public void TestFeetToMiles()
         {
             //Arrange stage
@@ -48,8 +53,10 @@ namespace ConsoleApp.Tests
 
         [TestMethod]
 
-        //Testing code for converting Miles to Metres
-        //using conversion values as accurate tests
+        ///<summary>
+        ///Testing code for converting Miles to Metres
+        ///using conversion values as accurate tests 
+        /// </summary>
         public void TestMilesToMetres()
         {
             //Arrange stage
@@ -68,8 +75,11 @@ namespace ConsoleApp.Tests
 
         [TestMethod]
 
-        //Testing code for converting Metres to Miles
-        //using conversion values as accurate tests
+
+        ///<summary>
+        ///Testing code for converting Metres to Miles
+        ///using conversion values as accurate tests 
+        /// </summary>
         public void TestMetresToMiles()
         {
             //Arrange stage
@@ -88,8 +98,11 @@ namespace ConsoleApp.Tests
 
         [TestMethod]
 
-        //Testing code for converting Feet to Metres
-        //using conversion values as accurate tests
+        ///<summary>
+        ///Testing code for converting Feet to Metres
+        ///using conversion values as accurate tests
+        ///Included use of Math Rounding to reflect requirements.
+        /// </summary>
         public void TestFeetToMetres()
         {
             //Arrange stage
@@ -100,31 +113,33 @@ namespace ConsoleApp.Tests
 
             //Act Stage
             converter.CalculateDistance();
-            double expectedDistance = 0.3047999902464003;
+            double expectedDistance = 0.30;
 
             //Assert Stage
-            Assert.AreEqual(expectedDistance, converter.ToDistance);
+            Assert.AreEqual(expectedDistance, Math.Round(converter.ToDistance,2));
         }
 
         [TestMethod]
 
-        //Testing code for converting Metres to Feet
-        //using conversion values as accurate tests.
-        //Included full accuracy of dec places to pass.
+        ///<summary>
+        ///Testing code for converting Metres to Feet
+        ///using conversion values as accurate tests. 
+        ///Included use of Math Rounding to reflect requirements.
+        /// </summary>
         public void TestMetresToFeet()
         {
             //Arrange stage
             DistanceConverter converter = new DistanceConverter();
             converter.FromUnit = DistanceUnits.Metres;
             converter.ToUnit = DistanceUnits.Feet;
-            converter.FromDistance = 0.3047999902464003;
+            converter.FromDistance = 0.30;
 
             //Act Stage
             converter.CalculateDistance();
             double expectedDistance = 1;
 
             //Assert Stage
-            Assert.AreEqual(expectedDistance, converter.ToDistance);
+            Assert.AreEqual(expectedDistance, Math.Round(converter.ToDistance,0));
         }
     }
 }
