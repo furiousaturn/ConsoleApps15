@@ -7,6 +7,9 @@ namespace ConsoleApp.Tests
     public class TestDistanceConverter
     {
         [TestMethod]
+
+        //Testing code for converting Miles to Feet
+        //using conversion values as accurate tests
         public void TestMilesToFeet()
         {
             //Arrange stage
@@ -24,6 +27,9 @@ namespace ConsoleApp.Tests
         }
 
         [TestMethod]
+
+        //Testing code for converting Feet to Miles
+        //using conversion values as accurate tests
         public void TestFeetToMiles()
         {
             //Arrange stage
@@ -41,6 +47,9 @@ namespace ConsoleApp.Tests
         }
 
         [TestMethod]
+
+        //Testing code for converting Miles to Metres
+        //using conversion values as accurate tests
         public void TestMilesToMetres()
         {
             //Arrange stage
@@ -58,6 +67,9 @@ namespace ConsoleApp.Tests
         }
 
         [TestMethod]
+
+        //Testing code for converting Metres to Miles
+        //using conversion values as accurate tests
         public void TestMetresToMiles()
         {
             //Arrange stage
@@ -75,6 +87,9 @@ namespace ConsoleApp.Tests
         }
 
         [TestMethod]
+
+        //Testing code for converting Feet to Metres
+        //using conversion values as accurate tests
         public void TestFeetToMetres()
         {
             //Arrange stage
@@ -92,6 +107,10 @@ namespace ConsoleApp.Tests
         }
 
         [TestMethod]
+
+        //Testing code for converting Metres to Feet
+        //using conversion values as accurate tests.
+        //Included full accuracy of dec places to pass.
         public void TestMetresToFeet()
         {
             //Arrange stage
