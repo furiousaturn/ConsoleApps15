@@ -20,6 +20,8 @@ namespace ConsoleAppProject.App04
     ///</author> 
     public class NewsFeed
     {
+        public const string Author = "Andrew";
+
         private readonly List<Post> posts;
 
         ///<summary>
@@ -28,6 +30,12 @@ namespace ConsoleAppProject.App04
         public NewsFeed()
         {
             posts = new List<Post>();
+            
+            //testing data only
+            MessagePost post = new MessagePost(Author, "I love Visual Studio 2019");
+            AddMessagePost(post);
+            PhotoPost photoPost = new PhotoPost(Author, "Photo1.jpg", "Visual Studio 2019");
+            AddPhotoPost(photoPost);
         }
 
 
