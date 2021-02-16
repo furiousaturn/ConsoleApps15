@@ -1,24 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ConsoleAppProject.App04.MessagePost">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="6" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAIAAAAAAAAAQACAQAAAAIAAAAAAAAgIgABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>App04\MessagePost.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleAppProject.App04.NewsFeed">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAAAAAAAAAAQCAAAAAAQABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAQCAAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>App04\NewsFeed.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleAppProject.App04.PhotoPost">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="6" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAIAAAAQAAAAQACAQAAAAIAAAAACAAgAgABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>App04\PhotoPost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleAppProject.App04.Post">
+    <Position X="3" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIAAAAAAAAAQACAQAAAAIAAAAAAAAgAgABAAA=</HashCode>
+      <FileName>App04\Post.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleHelpers.ConsoleHelper">
+    <Position X="8.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAAAAAAACAAoAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsoleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleAppProject.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAQAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
