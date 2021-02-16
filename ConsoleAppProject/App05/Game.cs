@@ -42,6 +42,7 @@ namespace ConsoleAppProject.App05
         public void Start()
         {
             Round = 1;
+            //user interafce will decide LastRound, set for now.
             LastRound = 5;
             CurrentPlayer = Human;
             Human.Score = 0;

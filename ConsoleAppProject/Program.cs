@@ -2,6 +2,7 @@
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.App04;
+using ConsoleAppProject.App05;
 using System;
 using ConsoleHelpers;
 
@@ -21,6 +22,7 @@ namespace ConsoleAppProject
         private static BMI calculator = new BMI();
         private static StudentGrades grader = new StudentGrades();
         private static NetworkApp social = new NetworkApp();
+        private static GameView rps = new GameView();
 
 
         public static void Main(string[] args)
@@ -32,10 +34,11 @@ namespace ConsoleAppProject
 
             //provide choices for APP01 and App02 here - temporary and will change and expand.
             string[] choices = { "Distance Converter", "BMI Calculator", 
-                                  "Student Marks", "Social Network"};
+                                  "Student Marks", "Social Network",
+                                  "Rock-Paper_Scissors Game"};
 
             int option = ConsoleHelper.SelectChoice(choices);
-            
+
             if (option == 1)
             {
                 converter.ConvertDistance();
@@ -52,7 +55,11 @@ namespace ConsoleAppProject
             {
                 social.DisplayMenu();
             }
-
+            else if (option == 5)
+            {
+                rps.Play();
+            }
+            else Console.WriteLine("Invalid Choice !");
         }
     }
 }
