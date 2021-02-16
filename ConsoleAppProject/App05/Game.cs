@@ -104,13 +104,12 @@ namespace ConsoleAppProject.App05
                 Human.Score += 2;
                 Winner = Human;
             }
-            
+
             //capture 3 more possibilities - a tie.
             else
             {
                 Human.Score += 1;
                 Computer.Score += 1;
-                Winner = null;
             }
 
             if (Round < LastRound)
