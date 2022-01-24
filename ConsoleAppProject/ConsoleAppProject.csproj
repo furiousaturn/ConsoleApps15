@@ -9,8 +9,4 @@
     <None Remove="ClassDiagram1.cd" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="JAVA\" />
-  </ItemGroup>
-
 </Project>
