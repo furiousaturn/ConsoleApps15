@@ -13,8 +13,4 @@
     <Folder Include="JAVA\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Users\win11client\Desktop\SAMPLE PROGRAMS\Unit 16 - Sample Program 1\Unit 16 - Sample Program 1\Unit 16 - Sample Program 1.csproj" />
-  </ItemGroup>
-
 </Project>
