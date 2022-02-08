@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps", "WebApps\WebApps.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Tests", "ConsoleApp.Tests\ConsoleApp.Tests.csproj", "{6A64EB4D-FDA3-48B0-98EE-E54848A395CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit 16 - Sample Program 1", "ConsoleAppProject\Unit 16 - Sample Program 1\Unit 16 - Sample Program 1\Unit 16 - Sample Program 1.csproj", "{6D19A7FE-F8F9-49CA-819A-65308602B3E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit 16 - Sample Program 1", "..\Users\win11client\Desktop\SAMPLE PROG 1\Unit 16 - Sample Program 1\Unit 16 - Sample Program 1\Unit 16 - Sample Program 1.csproj", "{1ED8B442-7123-4FC8-8781-F6205A269274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{6A64EB4D-FDA3-48B0-98EE-E54848A395CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A64EB4D-FDA3-48B0-98EE-E54848A395CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A64EB4D-FDA3-48B0-98EE-E54848A395CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D19A7FE-F8F9-49CA-819A-65308602B3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D19A7FE-F8F9-49CA-819A-65308602B3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D19A7FE-F8F9-49CA-819A-65308602B3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D19A7FE-F8F9-49CA-819A-65308602B3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED8B442-7123-4FC8-8781-F6205A269274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED8B442-7123-4FC8-8781-F6205A269274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED8B442-7123-4FC8-8781-F6205A269274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED8B442-7123-4FC8-8781-F6205A269274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
